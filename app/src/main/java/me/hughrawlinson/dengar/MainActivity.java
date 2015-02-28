@@ -2,18 +2,23 @@ package me.hughrawlinson.dengar;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.media.MediaPlayer;
 
 
 public class MainActivity extends ActionBarActivity {
+    private static final String TAG = "MyActivity";
+    MediaPlayer mediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        this.mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.swed);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -35,5 +40,11 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void playSmokeWeed(View view){
+        Log.v(TAG, "Smoking Weed Every Day...");
+        mediaPlayer.start();
+        Log.v(TAG, "Smoked Weed Every Day! :D");
     }
 }
