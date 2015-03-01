@@ -11,13 +11,17 @@ import android.media.MediaPlayer;
 
 public class MainActivity extends ActionBarActivity {
     private static final String TAG = "MyActivity";
-    MediaPlayer mediaPlayer;
+    MediaPlayer smokeWeed;
+    MediaPlayer tdfw;
+    MediaPlayer bf;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        this.mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.swed);
+        this.smokeWeed = MediaPlayer.create(getApplicationContext(), R.raw.swed);
+        this.tdfw = MediaPlayer.create(getApplicationContext(), R.raw.td4w);
+        this.bf = MediaPlayer.create(getApplicationContext(), R.raw.bf);
     }
 
     @Override
@@ -43,8 +47,14 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void playSmokeWeed(View view){
-        Log.v(TAG, "Smoking Weed Every Day...");
-        mediaPlayer.start();
-        Log.v(TAG, "Smoked Weed Every Day! :D");
+        smokeWeed.start();
+    }
+
+    public void playTDFW(View view){
+        tdfw.start();
+    }
+
+    public void playbf(View view){
+        bf.start();
     }
 }
